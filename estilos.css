@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	list-style-type: none;
 }
 
 html {
@@ -28,6 +29,8 @@ body {
 
 .navbar {
 	background: #FFCD48;
+	position: sticky;
+	top: 1;
 }
 
 .navbar a {
@@ -56,21 +59,64 @@ body {
 	color: #fff;
 }
 
+
 /* * ============================== */
 /* * ===== CONTENEDOR IMAGEN ====== */
 /* * ============================== */
 
 .contenedor-imagen {
-	height: 50vh;
+	height: 100vh;
+}
+.contenedor-selfie {
+	margin: auto;
+	position: absolute;
+	width: 240px;
+	height: 240px;
+	margin: auto;
+	top: 40px;
+	left: 40px;
+	right: 40px;
+	bottom: 40px;
+	padding: 7px;
+	z-index: 1;
+    border-radius: 50%;
+}
+.contenedor-selfie .nombre{
+	position: absolute;
+	padding: 260px 20px;
+	width: 225px;
+	padding-left: 30px;
+	text-align: center;
+	align-items: center;
+	margin-top: 1%;
+}
+.contenedor-selfie .below{
+	align-items: center;
+	text-align: center;
+	padding: 280px 20px;
+	color: #fff;
+	
 }
 
 .contenedor-imagen img {
-	width: 10%;
-	height: 10%;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 	vertical-align: top;
 	object-fit: cover;
 	object-position: 0 bottom;
+	z-index: -1;
+	border-radius: 50%;
+	background: linear-gradient(to bottom, rgb(0 0 0 / .25), rgb(0 0 0 / .25));
+
 }
+
+
+.nombre{
+	color: aqua;
+}
+
+
 
 /* * ============================== */
 /* * ============ MAIN ============ */
@@ -80,7 +126,7 @@ main {
 	min-height: 100vh;
 }
 
-main .contenido p {
+main .contenido .p {
 	margin-bottom: 20px;
 	line-height: 30px;
 	color: #fff;
@@ -90,6 +136,7 @@ main .contenido .titulo {
     font-family: 'Montserrat', sans-serif;
 	font-weight: normal;
 	padding-top: 40px;
+	padding-bottom: 20px;
 }
 
 main .contenido .fecha {
@@ -97,8 +144,12 @@ main .contenido .fecha {
 	color: #B5B5B5;
 }
 
+main .contenido .parrafo{
+	text-align: justify;
+	text-justify: inter-word;
+}
+
 .lista {
-	padding-left: 50px;
 	text-align: left;
 }
 
@@ -106,8 +157,132 @@ main .contenido .fecha {
 	height: 25px;
 	width: 25px;
 	opacity: 0,3;
-	padding: 0,5px;
+	padding: 0px 0px;
+	align-items: inherit;
+	padding-left: 0px;
 }
+
+.skill {
+	width: 500px;
+	margin: 60px auto;
+	color: #fff;
+	padding: 20px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.skill li {
+	margin: 20px 0;
+	padding: 10px;
+}
+
+.bar {
+	background: #353b48;
+	display: block;
+	height: 20px;
+	border: 1px solid rgba (0, 0, 0, 0.3);
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,.1);
+}
+
+.bar :hover{
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.bar span{
+	height: 20px;
+	float: left;
+	background: linear-gradient(135deg, rgba(236, 0, 140, 1)0%, rgba(252, 103, 103, 1)100%)
+}
+
+.html{
+	width: 60%;
+	animation: html 3s;
+}
+.css{
+	width: 55%;
+	animation: css 3s;
+}
+.angular{
+	width: 20%;
+	animation: angular 3s;
+}
+.javascript{
+	width: 35%;
+	animation: javascript 3s;
+}
+.java{
+	width: 50%;
+	animation: java 3s;
+}
+.spring{
+	width: 20%;
+	animation: spring 3s;
+}
+.sqloracle{
+	width: 55%;
+	animation: sqloracle 3s;
+}
+
+@keyframes html{
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 60%;
+	}
+}
+@keyframes css{
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 55%;
+	}
+}
+@keyframes angular{
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 20%;
+	}
+}
+@keyframes javascript{
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 35%;
+	}
+}
+@keyframes java{
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 50%;
+	}
+}
+@keyframes spring{
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 20%;
+	}
+}
+@keyframes sqloracle{
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 55%;
+	}
+}
+
+
+
 
 /* * ============================== */
 /* * ============ ASIDE =========== */
@@ -116,12 +291,12 @@ main .contenido .fecha {
 aside {
 	min-width: 30%;
 	margin: 40px 20px 20px 0;
-	height: 100%;
+	height: 600px;
 	background: #1D2F3D;
 	padding: 20px;
 	border-radius: 3px;
 	position: sticky;
-	top: 1
+	top: 20px;
 }
 
 aside .titulo {
@@ -134,8 +309,55 @@ aside .titulo {
 
 aside .indice a {
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	color: #FFCD48;
+}
+
+aside .contacto {
+	font-family: 'Montserrat', sans-serif;
+	text-align: auto;
+	padding-top: 70px;
+	margin-left: 0px;
+}
+
+aside .contenedor-redes {
+	display: flex;
+	height: 100vh;
+	align-items: left;
+	justify-content: left;
+}
+
+
+aside .contenedor-redes ul li{
+	display: list-item;
+	margin: 0 5px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+}
+aside .contenedor-redes ul li a{
+	display: block;
+	padding: 0px 10px;
+	padding-left: 0px;
+	background: #333;
+	color: #fff;
+	line-height: 50px;
+	font-size: 18px;
+	box-shadow: 0 3px 5px 0px  rgba(0, 0, 0, .2);
+	transition: .2s;
+}
+
+aside .btn {
+	display: inline-block;
+	text-decoration: none;
+	padding: 15px 20px;
+	background: #e1ad1c;
+	color: #1D2F3D;
+	border-radius: 5px;
+}
+
+aside .btn:hover{
+	opacity: 0.85;
 }
 
 
@@ -160,12 +382,66 @@ aside .indice a {
 		width: auto;
 		flex: 1;
 	}
-
 	.contenedor-imagen {
 		height: 50vh;
+		flex-wrap: wrap;
+		align-items: center;
+		position: static;
 	}
 
 	main .contenedor {
 		flex-direction: column;
+	}
+	.contenido {
+		padding-top: 15%;
+	}
+
+	header .titulo{
+		text-align: center;
+	}
+	.contenedor-selfie .nombre{
+		position: absolute;
+		padding: 5% 10%;
+		text-align: center;
+		align-items: center;
+		margin-top: 100%;
+	}
+
+	.contenedor-selfie .below{
+		align-items: center;
+		text-align: center;
+		padding: 5% 5%;
+		margin-top: 125%;
+		color: #fff;
+		text-align: center;
+		
+	}
+
+	main .skill{
+		height: 100%;
+		width: 100%;
+		margin-left: 0%;
+		margin-right: 5%;
+	}
+
+	aside {
+		padding-top: 50%;
+		width: 100%;
+		height: 90%;
+		border-bottom-width: 40px;
+		align-items: center;
+		text-align: center;
+		position: static;
+		justify-content: space-between;
+	}
+	aside .contenedor-redes{
+		align-items: top;
+		width: 100%;
+		height: 70%;
+		padding: 5px 15px;
+		padding-top: 0;
+		padding-bottom: 5%;
+		padding-left: 8%;
+		justify-content: space-between;
 	}
 }
