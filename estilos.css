@@ -80,22 +80,20 @@ body {
 	padding: 7px;
 	z-index: 1;
     border-radius: 50%;
+	transform: scale(1);
+	transition: 1s;
 }
 .contenedor-selfie .nombre{
 	position: absolute;
 	padding: 260px 20px;
 	width: 225px;
 	padding-left: 30px;
-	text-align: center;
-	align-items: center;
-	margin-top: 1%;
 }
 .contenedor-selfie .below{
 	align-items: center;
 	text-align: center;
 	padding: 280px 20px;
 	color: #fff;
-	
 }
 
 .contenedor-imagen img {
@@ -106,17 +104,24 @@ body {
 	object-fit: cover;
 	object-position: 0 bottom;
 	z-index: -1;
-	border-radius: 50%;
 	background: linear-gradient(to bottom, rgb(0 0 0 / .25), rgb(0 0 0 / .25));
 
 }
-
-
+.selfie {
+	border-radius: 50%;
+	transition: transform .2s;
+}
+.contenedor-imagen :hover {
+	transform: scale(1.3);
+	transition: 1s;
+}
 .nombre{
 	color: aqua;
+	text-align: center;
+	justify-content: space-between;
+	transform: scale(1);
+	transition: 1s;
 }
-
-
 
 /* * ============================== */
 /* * ============ MAIN ============ */
@@ -211,7 +216,7 @@ main .contenido .parrafo{
 	width: 35%;
 	animation: javascript 3s;
 }
-.java{
+.java {
 	width: 50%;
 	animation: java 3s;
 }
@@ -272,7 +277,7 @@ main .contenido .parrafo{
 		width: 20%;
 	}
 }
-@keyframes sqloracle{
+@keyframes sqloracle {
 	0%{
 		width: 0%;
 	}
@@ -324,7 +329,7 @@ aside .contenedor-redes {
 	display: flex;
 	height: 100vh;
 	align-items: left;
-	justify-content: left;
+	justify-content: center;
 }
 
 
@@ -337,7 +342,7 @@ aside .contenedor-redes ul li{
 }
 aside .contenedor-redes ul li a{
 	display: block;
-	padding: 0px 10px;
+	padding: 0px 0px;
 	padding-left: 0px;
 	background: #333;
 	color: #fff;
@@ -387,47 +392,57 @@ aside .btn:hover{
 		flex-wrap: wrap;
 		align-items: center;
 		position: static;
+		
 	}
 
 	main .contenedor {
 		flex-direction: column;
 	}
-	.contenido {
-		padding-top: 15%;
-	}
 
 	header .titulo{
 		text-align: center;
 	}
+	.contenedor-selfie {
+		transform: scale(0.9);
+		transition: .9s;
+		top: 8px;
+		margin: auto;
+	}
+	.contenedor-selfie :hover {
+		transform: scale(0.91);
+		transition: .9s;
+	}
 	.contenedor-selfie .nombre{
-		position: absolute;
-		padding: 5% 10%;
+		justify-content: center;
 		text-align: center;
-		align-items: center;
-		margin-top: 100%;
+		width: 230px;
+		height: 70px;
+		padding: 10px 20px;
+		top: 250px;
+		bottom: 20px;
+	}
+	.contenedor-selfie .below {
+		justify-content: center;
+		text-align: center;
+		padding: 10px 20px;
+		top: 270px;
+		bottom: 20px;
+		position: relative;
 	}
 
-	.contenedor-selfie .below{
-		align-items: center;
-		text-align: center;
-		padding: 5% 5%;
-		margin-top: 125%;
-		color: #fff;
-		text-align: center;
-		
-	}
+
+
 
 	main .skill{
-		height: 100%;
+		height: 90%;
 		width: 100%;
-		margin-left: 0%;
+		margin-left: 5%;
 		margin-right: 5%;
 	}
 
 	aside {
-		padding-top: 50%;
-		width: 100%;
-		height: 90%;
+		padding-top: 200px;
+		padding-left: 60px;
 		border-bottom-width: 40px;
 		align-items: center;
 		text-align: center;
@@ -436,12 +451,7 @@ aside .btn:hover{
 	}
 	aside .contenedor-redes{
 		align-items: top;
-		width: 100%;
-		height: 70%;
-		padding: 5px 15px;
-		padding-top: 0;
-		padding-bottom: 5%;
-		padding-left: 8%;
-		justify-content: space-between;
+		padding: 5px 55px;
+		padding-left: 15%;
 	}
 }
